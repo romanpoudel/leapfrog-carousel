@@ -339,13 +339,18 @@ img {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #063A5B;
+  background-color: #C4D3CA;
   margin: 0 5px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 .circle:hover {
   transform: scale(1.2);
+}
+
+.circle--active {
+  transform: scale(1.2);
+  background-color: #063A5B;
 }
 
 .carousel {
