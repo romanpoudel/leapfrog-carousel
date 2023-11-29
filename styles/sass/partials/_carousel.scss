@@ -1,0 +1,50 @@
+.carousel {
+
+    width: $carousel-width;
+    height: $carousel-height;
+    overflow: hidden;
+    position: relative;
+	&__wrapper {
+		display: flex;
+        height: $carousel-height;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        // left: -900px;
+	}
+	&__img {
+        max-width: $carousel-width;
+        max-height: $carousel-height;
+        object-fit: cover;
+	}
+    &__left-arrow{
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        background-color: transparent;
+        z-index: 1;
+        color: #063A5B;
+    }
+    &__right-arrow{
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        background-color: transparent;
+        z-index: 1;
+        color: #063A5B;
+    }
+    &__nav{
+        background-color: red;
+        position: absolute;
+        width: 100%;
+        height: 20px;
+        z-index: 1;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
