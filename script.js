@@ -2,6 +2,7 @@ const leftArrow = document.querySelector(".carousel__left-arrow");
 const rightArrow = document.querySelector(".carousel__right-arrow");
 const carouselWrapper = document.querySelector(".carousel__wrapper");
 let carouselImgIndex = 0;
+let slideInterval;
 
 //carousel navigation circles
 const carouselImg = document.querySelectorAll(".carousel__img");
@@ -35,48 +36,55 @@ document.addEventListener("click", (e) => {
 
 // move left function
 function moveLeft() {
-	carouselWrapper.style.left =
-		450 - carouselImg.length * 450 + 450 * carouselImgIndex + "px";
-	console.log(carouselImgIndex);
-	//animate circles
-    animateCircles();
-}
-
-leftArrow.addEventListener("click", () => {
-	console.log("left");
+	clearInterval(slideInterval);
 	if (carouselImgIndex > 0) {
 		carouselImgIndex--;
 	} else {
 		carouselImgIndex = carouselImg.length - 1;
 	}
+	carouselWrapper.style.transition = "left 0.5s ease-in-out";
+	carouselWrapper.style.left =
+		450 - carouselImg.length * 450 + 450 * carouselImgIndex + "px";
+	console.log(carouselImgIndex);
+	//animate circles
+	animateCircles();
+	// Setting new interval after arrow click
+	slideInterval = setInterval(() => {
+		moveRight();
+	}, 3000);
+}
+
+leftArrow.addEventListener("click", () => {
+	console.log("left");
 	moveLeft();
 });
 
 //move right function
 function moveRight() {
+	clearInterval(slideInterval);
+	if (carouselImgIndex < carouselImg.length - 1) {
+		carouselImgIndex++;
+	} else {
+		carouselImgIndex = 0;
+	}
+	carouselWrapper.style.transition = "left 0.5s ease-in-out";
 	carouselWrapper.style.left = -450 * carouselImgIndex + "px";
 	console.log(carouselImgIndex);
 	//animate circles
-    animateCircles();
+	animateCircles();
+	// Setting new interval after arrow click
+	slideInterval = setInterval(() => {
+		moveRight();
+	}, 3000);
 }
 
 rightArrow.addEventListener("click", () => {
 	console.log("right");
-	if (carouselImgIndex < carouselImg.length - 1) {
-		carouselImgIndex++;
-	} else {
-		carouselImgIndex = 0;
-	}
+
 	moveRight();
 });
 
-
 //automatically animate or slide carousel images
-setInterval(() => {
-	if (carouselImgIndex < carouselImg.length - 1) {
-		carouselImgIndex++;
-	} else {
-		carouselImgIndex = 0;
-	}
+slideInterval = setInterval(() => {
 	moveRight();
 }, 3000);
