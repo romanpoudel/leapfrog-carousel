@@ -5,3 +5,17 @@
     align-items: center;
     justify-content: center;
 }
+
+//circle
+.circle{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #063A5B;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        transform: scale(1.2);
+    }
+}
