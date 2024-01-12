@@ -44,7 +44,7 @@ function moveLeft() {
 	}
 	carouselWrapper.style.transition = "left 0.5s ease-in-out";
 	carouselWrapper.style.left =
-		450 - carouselImg.length * 450 + 450 * carouselImgIndex + "px";
+		800 - carouselImg.length * 800 + 800 * carouselImgIndex + "px";
 	console.log(carouselImgIndex);
 	//animate circles
 	animateCircles();
@@ -68,7 +68,7 @@ function moveRight() {
 		carouselImgIndex = 0;
 	}
 	carouselWrapper.style.transition = "left 0.5s ease-in-out";
-	carouselWrapper.style.left = -450 * carouselImgIndex + "px";
+	carouselWrapper.style.left = -800 * carouselImgIndex + "px";
 	console.log(carouselImgIndex);
 	//animate circles
 	animateCircles();

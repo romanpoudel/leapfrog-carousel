@@ -354,22 +354,22 @@ img {
 }
 
 .carousel {
-  width: 450px;
-  height: 300px;
+  width: 800px;
+  height: 500px;
   overflow: hidden;
   position: relative;
 }
 .carousel__wrapper {
   display: flex;
-  height: 300px;
+  height: 500px;
   overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
 }
 .carousel__img {
-  max-width: 450px;
-  max-height: 300px;
+  max-width: 800px;
+  max-height: 500px;
   object-fit: cover;
 }
 .carousel__left-arrow {
@@ -377,7 +377,7 @@ img {
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 24px;
+  font-size: 40px;
   background-color: transparent;
   z-index: 1;
   color: #063A5B;
@@ -388,7 +388,7 @@ img {
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 24px;
+  font-size: 40px;
   background-color: transparent;
   z-index: 1;
   color: #063A5B;
